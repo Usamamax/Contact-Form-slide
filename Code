@@ -1,4 +1,5 @@
 SIDE PANEL HTML *(PASTE AFTER BODY OPENING TAB)
+<div class="overlay"></div>
 <section class="side_panels">
 			<div class="quick_contact hidden-xs clearfix">
 			<div class="form_btn">&nbsp;</div>

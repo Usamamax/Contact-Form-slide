@@ -1,0 +1,239 @@
+SIDE PANEL HTML *(PASTE AFTER BODY OPENING TAB)
+<section class="side_panels">
+			<div class="quick_contact hidden-xs clearfix">
+			<div class="form_btn">&nbsp;</div>
+			<div id="panel">
+			    <section class="request_quote">
+			    	<div class="connect-form">
+				        <?php echo do_shortcode('[gravityform id="9" title="true" description="true" ajax="true"]'); ?>
+					</div>
+			    </section>
+			</div>
+			</div>
+</section>
+
+
+
+
+
+
+SIDE PANEL JAVA SCRIPT *()
+jQuery(".form_btn").click(function() {
+            var cont = jQuery(this).parent();
+            var contW = jQuery(this).parent().width();
+            var targ = jQuery(this);
+            var targW = jQuery(this).width();
+            var resW = contW - targW;
+            
+           jQuery(this).delay(500).toggleClass("open");
+            
+           if( jQuery(this).hasClass("open")) {
+                    cont.animate({right:18},
+                    function(){
+                        cont.animate({right:0});
+                    });
+                jQuery(".overlay").show();
+            }
+            else {
+                cont.animate({right:-resW});
+                jQuery(this).delay(500).removeClass("open");
+                jQuery(".overlay").hide();
+            }
+            
+           jQuery(".overlay").click(function() {
+                cont.stop().animate({right:-resW});
+                targ.delay(500).removeClass("open");
+                jQuery(this).hide();
+            });
+        
+      });
+
+   jQuery('.side_panels').css('display','none');
+   jQuery(window).scroll(function () {
+              if(jQuery(window).scrollTop() > 200) {
+                     jQuery('.side_panels').fadeIn();
+              }else{
+                     jQuery('.side_panels').fadeOut();
+              }
+          });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SIDE PANEL CSS *
+/*side panel*/
+.side_panels {
+    display: none;
+}
+
+.quick_contact {
+    right: -550px;
+    position: fixed;
+    z-index: 99999;
+    background: url(img/1sidepanel-close_05.gif) -99999px -9999px no-repeat;
+    top: 85px;
+
+}
+
+.form_btn {
+    cursor: pointer;
+    height: 357px;
+    width: 53px;
+    background: url(../img/1sidepanel-open_05.gif) 0 bottom no-repeat #1d1d1d;
+    opacity: .9;
+    float: left;
+}
+#panel,
+.top_bar .socials ul {
+    float: right;
+}
+.form_btn.open {
+    background: url(../img/1sidepanel-close_05.gif) 0 bottom no-repeat #1d1d1d;
+}
+#panel {
+    width: 550px;
+    min-height: 357px;
+    z-index: 999999;
+    padding: 0px 18px 0px;
+    background-color: #0677b8;
+    color: #fff;
+}
+#panel .contact_title {
+    font-size: 28px;
+    line-height: normal;
+    margin: 0 0 7px;
+    color: #20588a;
+    font-weight: 600;
+}
+#panel p {
+    font-size: 14px;
+    line-height: normal;
+    margin: 0 0 15px;
+    color: #000;
+}
+.overlay {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQImWNguAkAANwA2ohRxm8AAAAASUVORK5CYII=) rgba(0, 0, 0, 0);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 997;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact using gravity form *
+.request_quote .gform_title {
+    color:  white;
+
+}
+.connect-form input{
+    height: 30px !important ;
+    background: transparent !important;
+    border: 1px solid white !important;
+    border-radius: 3px !important;
+}
+.connect-form .gform_wrapper ul li.gfield{
+    margin-top: 0 !important;
+}
+.connect-form .gform_wrapper ul li.gfield::placeholder{
+    opacity: 1 !important;
+}
+/*.connect-form .ginput_container.ginput_container_checkbox ul li label{
+    font-size: 14px !important;
+    display: inline-block !important;
+    /*width: 207px !important;*/
+
+.connect-form .gform_wrapper.gform_heading{
+    margin-bottom: 0px !important;
+}
+.connect-form .gform_wrapper span.gform_description{
+    margin-bottom: 0px !important; 
+}
+.connect-form .gform_wrapper .gform_heading{
+    margin-bottom: 5px !important;
+}
+
+.connect-form #input_9_7 {
+    margin-bottom: 10px;
+}
+
+/*side bar check box*/
+
+.connect-form .gform_wrapper ul.gfield_checkbox li label{
+    /*background: yellow !important;*/
+    /*width: 250px !important;*/
+}
+.gform_wrapper .gfield_checkbox li, .gform_wrapper .gfield_radio li{
+    margin-bottom: 0 !important;
+}
+body .gform_wrapper ul li.field_description_below div.ginput_container_checkbox, body .gform_wrapper ul li.field_description_below div.ginput_container_radio{
+    margin-top: 0 !important;
+}
+.connect-form ul.gfield_checkbox {
+    /*width: 508px !important;*/
+    margin:0 !important;
+}
+.gform_body ul li .ginput_container  ul li input{
+    height: 10px !important; 
+}
+.gform_body ul li .ginput_container  ul li label{
+    font-size: 12px !important;
+    width: 226px;
+}
+.gform_body ul li .ginput_container  ul li label#label_9_4_7{
+    width: 300px !important;
+}
+
+.connect-form .gform_wrapper .field_sublabel_hidden_label .ginput_complex.ginput_container input[type="text"], .gform_wrapper .field_sublabel_hidden_label .ginput_complex.ginput_container select{
+    margin-bottom: 5px !important;
+}
+.connect-form label{
+    margin-bottom: 0 !important;
+}
+.connect-form .gform_wrapper h3.gform_title{
+    margin-top: 0 !important;
+}
+
+.connect-form .gform_wrapper textarea.medium {
+    height: 55px;
+    width: 100%;
+    background: transparent; 
+    border: 1px solid white;
+    border-radius: 5px !important;
+
+}
+.connect-form  .gform_wrapper .gform_footer{
+    margin:0 !important;
+}
+.connect-form input::placeholder{
+    color: white !important;
+}

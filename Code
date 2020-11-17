@@ -1,12 +1,12 @@
 SIDE PANEL HTML *(PASTE AFTER BODY OPENING TAB)
 <div class="overlay"></div>
-<section class="side_panels">
+	<section class="side_panels">
 			<div class="quick_contact hidden-xs clearfix">
 			<div class="form_btn">&nbsp;</div>
 			<div id="panel">
 			    <section class="request_quote">
 			    	<div class="connect-form">
-				        <?php echo do_shortcode('[gravityform id="9" title="true" description="true" ajax="true"]'); ?>
+				       <?php echo do_shortcode( '[contact-form-7 id="1021" title="slide-contact-form"]' );  ?>
 					</div>
 			    </section>
 			</div>
@@ -132,6 +132,42 @@ SIDE PANEL CSS *
     width: 100%;
     z-index: 997;
 }
+
+
+
+Contact using gravity form *
+
+.contact-form1 input, .contact-form1 textarea {
+    background: transparent;
+    padding: 7px 10px;
+	color: #fff !important;
+	border-radius:5px
+}
+
+.contact-form1 input::placeholder , .contact-form1 textarea::placeholder
+{
+	color:#fff;
+	opacity:0.8;
+}
+.contact-form1 input:focus , .contact-form1 textarea:focus
+{
+	border-color:#fff
+}
+
+.contact-form1 textarea {height:80px; width:95%}
+
+.contact-form1 input {
+    width: 100%;
+}
+.contact-form1 p {
+    width: 45%;
+    float: left;
+    margin-right: 20px !important;
+}
+.contact-form1 p:last-child {
+    width: 100%;
+	float:none; }
+		
 
 
 

@@ -19,6 +19,7 @@ SIDE PANEL HTML *(PASTE AFTER BODY OPENING TAB)
 
 
 SIDE PANEL JAVA SCRIPT *()
+jQuery( document ).ready(function() {
 jQuery(".form_btn").click(function() {
             var cont = jQuery(this).parent();
             var contW = jQuery(this).parent().width();
@@ -57,6 +58,7 @@ jQuery(".form_btn").click(function() {
                      jQuery('.side_panels').fadeOut();
               }
           });
+	      });
 
 
 
